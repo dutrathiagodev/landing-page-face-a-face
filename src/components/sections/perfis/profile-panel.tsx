@@ -7,7 +7,7 @@ const styles = {
     panel: "bg-lula text-lula-tint",
     pad: "md:pl-[104px] md:pr-12",
     plate:
-      "bg-lula left-0 w-3/4 pl-6 md:pl-[104px] font-lula text-[clamp(56px,8vw,96px)] leading-[0.92] tracking-[0.5px] text-white",
+      "bg-lula left-0 justify-end font-lula text-[clamp(44px,8vw,96px)] leading-none tracking-[0.5px]",
     heading: "font-lula text-[38px] leading-none tracking-[0.5px] text-white",
     card: "bg-lula-dark",
     divider: "border-lula-line",
@@ -18,7 +18,7 @@ const styles = {
     panel: "bg-flavio text-flavio-tint",
     pad: "md:pl-12 md:pr-[104px]",
     plate:
-      "bg-flavio right-0 w-3/4 pl-6 font-flavio text-[clamp(44px,6vw,72px)] font-black italic leading-none tracking-[-1px] text-white",
+      "bg-flavio right-0 justify-start font-flavio text-[clamp(54px,9.8vw,118px)] font-black italic leading-none tracking-[-1px]",
     heading:
       "font-flavio text-[30px] font-black italic leading-none tracking-[-1px] text-white",
     card: "bg-flavio-dark",
@@ -71,21 +71,21 @@ export function ProfilePanel({ profile }: { profile: ProfileData }) {
 
   return (
     <article className={`flex flex-col ${tone.panel}`}>
-      <div className="relative h-[320px] overflow-hidden md:h-[480px]">
+      <div className="relative h-[360px] overflow-hidden md:h-[clamp(440px,44vw,680px)]">
         <Image
           src={asset(profile.image.src)}
           alt={profile.image.alt}
           fill
           sizes="(min-width: 768px) 50vw, 100vw"
-          className="object-cover object-[center_30%] grayscale contrast-[1.1]"
+          className="object-cover object-center grayscale contrast-[1.1]"
         />
         <h3
-          className={`absolute bottom-0 pb-3 pr-6 pt-4 uppercase ${tone.plate}`}
+          className={`absolute bottom-0 flex h-[clamp(84px,12vw,150px)] w-[88%] items-center whitespace-nowrap px-6 uppercase text-white md:w-3/4 md:px-8 ${tone.plate}`}
         >
-          <span className="inline-block">
+          <span className="relative inline-block">
             {profile.name}
             {isFlavio && (
-              <span className="mt-2 block h-[6px] w-full bg-flavio-accent" />
+              <span className="absolute -bottom-3 left-0 h-[6px] w-full bg-flavio-accent" />
             )}
           </span>
         </h3>
