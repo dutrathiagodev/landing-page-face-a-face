@@ -3,7 +3,7 @@ import { goldenRule } from "@/content/golden-rule";
 export function GoldenRule() {
   return (
     <section className="bg-pink">
-      <div aria-hidden="true" className="flex h-[6px]">
+      <div aria-hidden="true" className="flex h-[10px]">
         <div className="flex-1 bg-lula" />
         <div className="flex-1 bg-flavio" />
       </div>

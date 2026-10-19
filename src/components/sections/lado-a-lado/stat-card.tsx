@@ -16,7 +16,7 @@ export function StatCard({ candidate, value, label, source }: StatData) {
   const style = styles[candidate];
 
   return (
-    <li className={`flex flex-col gap-2 border-t-4 bg-white p-5 ${style.border}`}>
+    <li className={`flex flex-col gap-2 border-t-[6px] bg-white p-5 ${style.border}`}>
       <p className={style.value}>{value}</p>
       <p className="text-small font-bold leading-[1.3] text-ink">{label}</p>
       <p className="font-mono text-caption leading-[1.5] text-muted">{source}</p>

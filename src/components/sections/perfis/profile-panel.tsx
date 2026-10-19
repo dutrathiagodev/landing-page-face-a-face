@@ -5,10 +5,9 @@ const styles = {
   lula: {
     panel: "bg-lula text-lula-tint",
     pad: "md:pl-[104px] md:pr-12",
-    tint: "bg-lula/30",
     plate:
       "bg-lula left-0 font-lula text-[clamp(56px,8vw,96px)] leading-[0.92] tracking-[0.5px] text-white",
-    heading: "font-lula text-[28px] leading-none tracking-[0.5px] text-white",
+    heading: "font-lula text-[38px] leading-none tracking-[0.5px] text-white",
     card: "bg-lula-dark",
     divider: "border-lula-line",
     rule: "border-white border-b",
@@ -17,11 +16,10 @@ const styles = {
   flavio: {
     panel: "bg-flavio text-flavio-tint",
     pad: "md:pl-12 md:pr-[104px]",
-    tint: "bg-flavio/45",
     plate:
       "bg-flavio right-0 font-flavio text-[clamp(44px,6vw,72px)] font-black italic leading-none tracking-[-1px] text-white",
     heading:
-      "font-flavio text-[26px] font-black italic leading-none tracking-[-1px] text-white",
+      "font-flavio text-[30px] font-black italic leading-none tracking-[-1px] text-white",
     card: "bg-flavio-dark",
     divider: "border-flavio-line",
     rule: "border-flavio-accent border-b-2",
@@ -30,10 +28,20 @@ const styles = {
 };
 
 function Ref({ value, className }: { value: string; className: string }) {
-  if (!value) return null;
+  const numbers = value.match(/\[\d+\]/g);
+  if (!numbers) return null;
+
   return (
     <p className={`mt-2 font-mono text-caption leading-[1.5] ${className}`}>
-      {value}
+      {numbers.map((number) => (
+        <a
+          key={number}
+          href="#fontes"
+          className="border-b border-current/40 hover:border-current"
+        >
+          {number}
+        </a>
+      ))}
     </p>
   );
 }
@@ -46,7 +54,7 @@ function Card({
   tone: (typeof styles)["lula"];
 }) {
   return (
-    <li className={`flex min-h-[160px] flex-col p-[18px] ${tone.card}`}>
+    <li className={`flex min-h-[196px] flex-col p-[22px] ${tone.card}`}>
       <h4 className="text-card font-extrabold leading-[1.3] text-white">
         {item.title}
       </h4>
@@ -68,18 +76,14 @@ export function ProfilePanel({ profile }: { profile: ProfileData }) {
           alt={profile.image.alt}
           fill
           sizes="(min-width: 768px) 50vw, 100vw"
-          className="object-cover object-top"
-        />
-        <div
-          aria-hidden="true"
-          className={`absolute inset-0 mix-blend-multiply ${tone.tint}`}
+          className="object-cover object-[center_30%] grayscale contrast-[1.1]"
         />
         <h3
           className={`absolute bottom-0 px-6 pb-3 pt-4 uppercase md:px-8 ${tone.plate}`}
         >
           {profile.name}
           {isFlavio && (
-            <span className="mt-2 block h-1 w-[min(210px,60%)] bg-flavio-accent" />
+            <span className="mt-2 block h-[6px] w-full bg-flavio-accent" />
           )}
         </h3>
       </div>

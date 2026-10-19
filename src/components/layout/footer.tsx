@@ -11,7 +11,16 @@ export function Footer() {
 
         <ul className="grid gap-x-8 gap-y-3 font-mono text-mono leading-[1.5] text-text-on-dark sm:grid-cols-2 lg:grid-cols-3">
           {footer.sources.map((source) => (
-            <li key={source}>{source}</li>
+            <li key={source.label}>
+              <a
+                href={source.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline-offset-4 hover:text-white hover:underline"
+              >
+                {source.label}
+              </a>
+            </li>
           ))}
         </ul>
 
