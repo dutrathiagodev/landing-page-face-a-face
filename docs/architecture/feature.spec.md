@@ -18,26 +18,26 @@ Define a stack, a estrutura de pastas, o fluxo de dependencia e as regras de com
 
 1. Pastas obrigatorias
 
-- app, components (sections, ui, layout), content, types, lib e public.
+- src/app, src/components (sections, ui, layout), src/content, src/types, src/lib e public (na raiz).
 
 2. Separacao de responsabilidade
 
-- app: rotas, layout e metadata
-- components/sections: markup de cada secao da landing
-- components/ui: elementos visuais genericos (button, container, card)
-- components/layout: header e footer
-- content: textos e dados estaticos
-- lib: helpers e integracoes externas
+- src/app: rotas, layout e metadata
+- src/components/sections: markup de cada secao da landing
+- src/components/ui: elementos visuais genericos (button, container, card)
+- src/components/layout: header e footer
+- src/content: textos e dados estaticos
+- src/lib: helpers e integracoes externas
 
 3. Fluxo de dependencia (sempre nessa direcao)
 
-- app -> components/sections -> components/ui
-- components/sections -> content, types, lib
-- components/ui -> lib (somente utilitarios)
+- src/app -> src/components/sections -> src/components/ui
+- src/components/sections -> src/content, src/types, src/lib
+- src/components/ui -> src/lib (somente utilitarios)
 
 4. Regra da page
 
-- app/page.tsx apenas importa e ordena as secoes
+- src/app/page.tsx apenas importa e ordena as secoes
 - sem texto, sem estilo de secao e sem logica
 
 5. Regra da secao
@@ -49,28 +49,28 @@ Define a stack, a estrutura de pastas, o fluxo de dependencia e as regras de com
 6. Regra do Tailwind
 
 - estilo apenas por classes utilitarias
-- cores, fontes e espacamentos definidos como tokens em @theme (app/globals.css)
+- cores, fontes e espacamentos definidos como tokens em @theme (src/app/globals.css)
 - mobile first: base sem prefixo, depois sm:, md:, lg:
 
 7. Convencoes de arquivo
 
 - arquivos em kebab-case (hero.tsx, section-title.tsx)
 - componentes em PascalCase
-- content e types: <section>.ts
+- src/content e src/types: <section>.ts
 
 ## Estrutura obrigatoria de arquivos
 
 ```text
-app/layout.tsx
-app/page.tsx
-app/globals.css
-components/layout/header.tsx
-components/layout/footer.tsx
-components/ui/...
-components/sections/<section>/<section>.tsx
-content/<section>.ts
-types/<section>.ts
-lib/utils.ts
+src/app/layout.tsx
+src/app/page.tsx
+src/app/globals.css
+src/components/layout/header.tsx
+src/components/layout/footer.tsx
+src/components/ui/...
+src/components/sections/<section>/<section>.tsx
+src/content/<section>.ts
+src/types/<section>.ts
+src/lib/utils.ts
 public/images/...
 ```
 
@@ -85,7 +85,7 @@ public/images/...
 
 ## Nao permitido
 
-- Texto de negocio dentro de components/ui
+- Texto de negocio dentro de src/components/ui
 - Importar uma secao dentro de outra
 - "use client" na secao inteira sem necessidade
 - CSS inline ou valores magicos repetidos em vez de tokens
@@ -95,5 +95,5 @@ public/images/...
 
 1. Copiar a estrutura de uma secao existente (ex.: hero)
 2. Adaptar nomes e conteudo
-3. Adicionar em app/page.tsx
+3. Adicionar em src/app/page.tsx
 4. Validar responsivo, lint e build

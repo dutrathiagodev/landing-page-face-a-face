@@ -2,6 +2,8 @@
 
 Passo a passo para criar o projeto da landing page com React, Next.js e Tailwind CSS.
 
+> Todo o codigo fica dentro de `src/`. Na raiz ficam apenas `public/`, `docs/`, configs e `package.json`.
+
 ## Stack
 
 - Next.js 16 (App Router) + React 19
@@ -24,12 +26,12 @@ O projeto abre em http://localhost:3000.
 ## 2. Criar a estrutura de pastas
 
 ```bash
-mkdir -p components/sections components/ui components/layout content types lib public/images
+mkdir -p src/components/sections src/components/ui src/components/layout src/content src/types src/lib public/images
 ```
 
 ## 3. Definir os tokens no Tailwind
 
-Em `app/globals.css`, declare cores, fontes e espacamentos dentro de `@theme`:
+Em `src/app/globals.css`, declare cores, fontes e espacamentos dentro de `@theme`:
 
 ```css
 @import "tailwindcss";
@@ -48,12 +50,12 @@ Depois use as classes geradas: `bg-brand`, `text-foreground`.
 Exemplo para a secao `hero`:
 
 ```bash
-mkdir -p components/sections/hero
-touch components/sections/hero/hero.tsx
-touch content/hero.ts
+mkdir -p src/components/sections/hero
+touch src/components/sections/hero/hero.tsx
+touch src/content/hero.ts
 ```
 
-Depois importe a secao em `app/page.tsx`.
+Depois importe a secao em `src/app/page.tsx`.
 
 ## 5. Comandos do dia a dia
 
