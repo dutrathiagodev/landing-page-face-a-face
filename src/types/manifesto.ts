@@ -1,4 +1,4 @@
-export type ManifestoCta = {
+type ManifestoCta = {
   label: string;
   href: string;
   variant: "primary" | "outline";
