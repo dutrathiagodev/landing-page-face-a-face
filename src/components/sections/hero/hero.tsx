@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { hero } from "@/content/hero";
+import { asset } from "@/lib/asset";
 import { getToday } from "@/lib/today";
 import { NamePlate } from "./name-plate";
 
@@ -8,10 +9,13 @@ export async function Hero() {
   const today = await getToday();
 
   return (
-    <section id="hero" className="relative h-svh min-h-[560px] w-full overflow-hidden bg-pink">
+    <section
+      id="hero"
+      className="relative h-svh min-h-[560px] w-full overflow-hidden bg-pink"
+    >
       <h1 className="sr-only">Lula x Flávio — Face a Face</h1>
       <Image
-        src={hero.image.src}
+        src={asset(hero.image.src)}
         alt={hero.image.alt}
         fill
         priority

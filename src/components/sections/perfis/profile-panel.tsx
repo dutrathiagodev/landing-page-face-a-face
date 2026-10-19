@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { asset } from "@/lib/asset";
 import type { ProfileData, ProfileItem } from "@/types/perfis";
 
 const styles = {
@@ -72,7 +73,7 @@ export function ProfilePanel({ profile }: { profile: ProfileData }) {
     <article className={`flex flex-col ${tone.panel}`}>
       <div className="relative h-[320px] overflow-hidden md:h-[480px]">
         <Image
-          src={profile.image.src}
+          src={asset(profile.image.src)}
           alt={profile.image.alt}
           fill
           sizes="(min-width: 768px) 50vw, 100vw"
