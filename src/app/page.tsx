@@ -1,6 +1,7 @@
 import { Header } from "@/components/layout/header";
 import { Hero } from "@/components/sections/hero/hero";
 import { Manifesto } from "@/components/sections/manifesto/manifesto";
+import { LadoALado } from "@/components/sections/lado-a-lado/lado-a-lado";
 import { Perfis } from "@/components/sections/perfis/perfis";
 
 export default function Home() {
@@ -11,7 +12,7 @@ export default function Home() {
         <Hero />
         <Manifesto />
         <Perfis />
-        {/* Lado a lado */}
+        <LadoALado />
         {/* Status jurídico */}
         {/* Perguntas */}
         {/* GoldenRule */}
