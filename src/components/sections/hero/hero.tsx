@@ -9,6 +9,7 @@ export async function Hero() {
 
   return (
     <section id="hero" className="relative h-[600px] md:h-[clamp(420px,56vw,820px)] w-full overflow-hidden bg-pink">
+      <h1 className="sr-only">Lula x Flávio — Face a Face</h1>
       <Image
         src={hero.image.src}
         alt={hero.image.alt}
