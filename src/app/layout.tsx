@@ -28,8 +28,9 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "Face a Face",
-  description: "Landing page - face a face",
+  title: "Face a Face — Lula x Flávio | Guia cívico, 2º turno 2026",
+  description:
+    "Dossiê comparativo equilibrado entre os dois candidatos: pontos fortes, riscos, status jurídico e perguntas justas, com as fontes consultadas.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
