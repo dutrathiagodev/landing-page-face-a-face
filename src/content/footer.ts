@@ -1,12 +1,4 @@
-export type SourceLink = {
-  label: string;
-  href: string;
-};
-
-export type SourceGroup = {
-  title: string;
-  links: SourceLink[];
-};
+import type { SourceGroup } from "@/types/footer";
 
 export const footer = {
   title: "Fontes",

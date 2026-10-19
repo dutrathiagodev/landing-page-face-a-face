@@ -27,8 +27,9 @@ src/components/
   sections/<section>/
     <section>.tsx
   ui/
-    button.tsx
+    button-link.tsx
     container.tsx
+    section-heading.tsx
 
 src/content/<section>.ts
 src/types/<section>.ts
