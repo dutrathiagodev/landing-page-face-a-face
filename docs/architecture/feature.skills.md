@@ -6,21 +6,21 @@ Guia pratico para criar e evoluir a landing page com React, Next.js e Tailwind C
 
 Manter consistencia entre as secoes, com responsabilidades claras:
 
-- app: rotas, layout e metadata (somente composicao)
-- components/sections: secoes da landing (hero, features, pricing, faq...)
-- components/ui: componentes visuais reutilizaveis
-- content: textos, links e dados estaticos
-- lib e types: utilitarios e tipos compartilhados
+- src/app: rotas, layout e metadata (somente composicao)
+- src/components/sections: secoes da landing (hero, features, pricing, faq...)
+- src/components/ui: componentes visuais reutilizaveis
+- src/content: textos, links e dados estaticos
+- src/lib e src/types: utilitarios e tipos compartilhados
 
 ## Estrutura base
 
 ```text
-app/
+src/app/
   layout.tsx
   page.tsx
   globals.css
 
-components/
+src/components/
   layout/
     header.tsx
     footer.tsx
@@ -30,9 +30,9 @@ components/
     button.tsx
     container.tsx
 
-content/<section>.ts
-types/<section>.ts
-lib/utils.ts
+src/content/<section>.ts
+src/types/<section>.ts
+src/lib/utils.ts
 public/images/
 ```
 
@@ -40,7 +40,7 @@ public/images/
 
 1. A page apenas compoe secoes
 
-- app/page.tsx importa as secoes na ordem; o markup fica nas secoes.
+- src/app/page.tsx importa as secoes na ordem; o markup fica nas secoes.
 
 2. Cada secao e independente
 
@@ -48,9 +48,9 @@ public/images/
 
 3. Conteudo separado da UI
 
-- textos e listas em content/<section>.ts.
+- textos e listas em src/content/<section>.ts.
 
-4. UI generica em components/ui
+4. UI generica em src/components/ui
 
 - sem texto de negocio; variantes por props.
 
@@ -68,7 +68,7 @@ public/images/
 7. Imagens e SEO
 
 - next/image com width, height e alt
-- metadata em app/layout.tsx
+- metadata em src/app/layout.tsx
 - um unico h1 por pagina
 
 8. Acessibilidade
@@ -85,10 +85,10 @@ public/images/
 
 ## Template rapido de implementacao
 
-1. Criar content/<section>.ts
-2. Criar components/sections/<section>/<section>.tsx
-3. Reutilizar components/ui
-4. Adicionar a secao em app/page.tsx
+1. Criar src/content/<section>.ts
+2. Criar src/components/sections/<section>/<section>.tsx
+3. Reutilizar src/components/ui
+4. Adicionar a secao em src/app/page.tsx
 5. Conferir responsivo e acessibilidade
 6. Rodar npm run lint e npm run build
 
