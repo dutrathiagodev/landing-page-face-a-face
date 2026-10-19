@@ -13,6 +13,9 @@ function SourceLabel({ label }: { label: string }) {
   );
 }
 
+// Índices dos grupos em footer.groups, distribuídos para as colunas ficarem equilibradas.
+const columns = [[0, 2], [1, 4], [3]];
+
 export function Footer() {
   return (
     <footer id="fontes" className="bg-ink py-12 md:py-[72px]">
@@ -21,30 +24,37 @@ export function Footer() {
           {footer.title}
         </h2>
 
-        <div className="gap-x-12 md:columns-2 lg:columns-3">
-          {footer.groups.map((group) => (
-            <section
-              key={group.title}
-              className="mb-8 break-inside-avoid border-t border-line-dark pt-4"
-            >
-              <h3 className="font-mono text-caption font-medium uppercase leading-[1.4] tracking-[2px] text-muted-dark">
-                {group.title}
-              </h3>
-              <ul className="mt-3 flex flex-col gap-2 text-caption leading-[1.6] text-text-on-dark">
-                {group.links.map((link) => (
-                  <li key={link.label}>
-                    <a
-                      href={link.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="font-mono underline-offset-4 hover:text-white hover:underline"
-                    >
-                      <SourceLabel label={link.label} />
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </section>
+        <div className="grid gap-x-12 gap-y-8 md:grid-cols-2 lg:grid-cols-3">
+          {columns.map((column, index) => (
+            <div key={index} className="flex flex-col gap-8">
+              {column.map((groupIndex) => {
+                const group = footer.groups[groupIndex];
+                return (
+                  <section
+                    key={group.title}
+                    className="border-t border-line-dark pt-4"
+                  >
+                    <h3 className="font-mono text-caption font-medium uppercase leading-[1.4] tracking-[2px] text-muted-dark">
+                      {group.title}
+                    </h3>
+                    <ul className="mt-3 flex flex-col gap-2 text-caption leading-[1.6] text-text-on-dark">
+                      {group.links.map((link) => (
+                        <li key={link.label}>
+                          <a
+                            href={link.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="font-mono underline-offset-4 hover:text-white hover:underline"
+                          >
+                            <SourceLabel label={link.label} />
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </section>
+                );
+              })}
+            </div>
           ))}
         </div>
 
