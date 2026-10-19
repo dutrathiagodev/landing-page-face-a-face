@@ -6,7 +6,7 @@ export function Hero() {
   const [lula, flavio] = hero.candidates;
 
   return (
-    <section className="relative h-[clamp(420px,56vw,820px)] w-full overflow-hidden bg-pink">
+    <section className="relative h-[600px] md:h-[clamp(420px,56vw,820px)] w-full overflow-hidden bg-pink">
       <Image
         src={hero.image.src}
         alt={hero.image.alt}
@@ -28,11 +28,13 @@ export function Hero() {
         </span>
       </div>
 
-      <div className="absolute bottom-6 left-4 md:bottom-10 md:left-12">
-        <NamePlate {...lula} />
-      </div>
-      <div className="absolute bottom-6 right-4 md:bottom-10 md:right-12">
-        <NamePlate {...flavio} />
+      <div className="absolute inset-x-4 bottom-6 flex flex-col gap-4 md:contents">
+        <div className="self-start md:absolute md:bottom-10 md:left-12">
+          <NamePlate {...lula} />
+        </div>
+        <div className="self-end md:absolute md:bottom-10 md:right-12">
+          <NamePlate {...flavio} />
+        </div>
       </div>
     </section>
   );
