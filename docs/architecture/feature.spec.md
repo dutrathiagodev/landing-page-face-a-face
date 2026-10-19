@@ -24,7 +24,7 @@ Define a stack, a estrutura de pastas, o fluxo de dependencia e as regras de com
 
 - src/app: rotas, layout e metadata
 - src/components/sections: markup de cada secao da landing
-- src/components/ui: elementos visuais genericos (button, container, card)
+- src/components/ui: elementos visuais genericos (container, section-heading, button-link)
 - src/components/layout: header e footer
 - src/content: textos e dados estaticos
 - src/lib: helpers e integracoes externas
