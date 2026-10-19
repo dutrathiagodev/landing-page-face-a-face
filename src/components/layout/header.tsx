@@ -25,7 +25,7 @@ export function Header() {
   return (
     <header
       inert={!visible}
-      className={`fixed inset-x-0 top-0 z-50 bg-ink text-text-on-dark transition-transform duration-300 ${
+      className={`fixed inset-x-0 top-0 z-50 border-b border-paper/15 bg-ink/80 text-text-on-dark backdrop-blur-[16px] transition-transform duration-500 ${
         visible ? "translate-y-0" : "-translate-y-full"
       }`}
     >
