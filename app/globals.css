@@ -1,26 +1,50 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  --color-ink: #141414;
+  --color-ink-2: #1e1c1a;
+  --color-paper: #f4efe7;
+  --color-paper-2: #ede5d9;
+  --color-white: #ffffff;
+  --color-pink: #f6c7bc;
+  --color-muted: #55504a;
+  --color-muted-dark: #b9b1a6;
+  --color-text-2: #3a3631;
+  --color-text-on-dark: #d8d0c4;
+  --color-line: #c9c0b4;
+  --color-line-dark: #3a3631;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-lula: #b5121b;
+  --color-lula-dark: #8e0e15;
+  --color-lula-accent: #f2564f;
+  --color-lula-line: #e8807a;
+  --color-lula-tint: #ffe7e4;
+
+  --color-flavio: #0a3a8c;
+  --color-flavio-dark: #082d6c;
+  --color-flavio-accent: #f2c200;
+  --color-flavio-line: #5d7fbf;
+  --color-flavio-tint: #dce6f7;
+
+  --font-sans: var(--font-archivo);
+  --font-mono: var(--font-plex-mono);
+  --font-lula: var(--font-anton);
+  --font-flavio: var(--font-montserrat);
+
+  --text-overline: 12px;
+  --text-caption: 12px;
+  --text-mono: 13px;
+  --text-small: 15px;
+  --text-body: 16px;
+  --text-lead: 18px;
+  --text-card: 17px;
+  --text-h2: 48px;
+  --text-h1: 60px;
+  --text-quote: 40px;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans), sans-serif;
 }
