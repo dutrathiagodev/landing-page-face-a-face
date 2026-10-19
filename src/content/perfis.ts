@@ -48,7 +48,7 @@ export const perfis: [ProfileData, ProfileData] = [
   },
   {
     candidate: "flavio",
-    name: "Bolsonaro",
+    name: "Flávio",
     bio: "Senador desde 2019, após quatro mandatos como deputado estadual no RJ. Agenda declarada em segurança pública, reforma administrativa, desburocratização, serviços digitais e redução de tributos.",
     image: { src: "/images/perfil-flavio.jpg", alt: "Retrato de Flávio Bolsonaro" },
     strengths: [

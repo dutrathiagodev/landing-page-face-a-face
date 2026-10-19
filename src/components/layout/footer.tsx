@@ -1,6 +1,18 @@
 import { Container } from "@/components/ui/container";
 import { footer } from "@/content/footer";
 
+function SourceLabel({ label }: { label: string }) {
+  const match = label.match(/^(\[\d+\])\s*(.*)$/);
+  if (!match) return <>{label}</>;
+
+  return (
+    <>
+      <span className="mr-2 text-muted-dark">{match[1]}</span>
+      {match[2]}
+    </>
+  );
+}
+
 export function Footer() {
   return (
     <footer id="fontes" className="bg-ink py-12 md:py-[72px]">
@@ -9,22 +21,25 @@ export function Footer() {
           {footer.title}
         </h2>
 
-        <div className="grid gap-x-10 gap-y-10 md:grid-cols-2 lg:grid-cols-3">
+        <div className="gap-x-12 md:columns-2 lg:columns-3">
           {footer.groups.map((group) => (
-            <section key={group.title} className="flex flex-col gap-3">
-              <h3 className="font-mono text-overline font-medium uppercase leading-[1.4] tracking-[2px] text-muted-dark">
+            <section
+              key={group.title}
+              className="mb-8 break-inside-avoid border-t border-line-dark pt-4"
+            >
+              <h3 className="font-mono text-caption font-medium uppercase leading-[1.4] tracking-[2px] text-muted-dark">
                 {group.title}
               </h3>
-              <ul className="flex flex-col gap-3 font-mono text-mono leading-[1.5] text-text-on-dark">
+              <ul className="mt-3 flex flex-col gap-2 text-caption leading-[1.6] text-text-on-dark">
                 {group.links.map((link) => (
                   <li key={link.label}>
                     <a
                       href={link.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="underline-offset-4 hover:text-white hover:underline"
+                      className="font-mono underline-offset-4 hover:text-white hover:underline"
                     >
-                      {link.label}
+                      <SourceLabel label={link.label} />
                     </a>
                   </li>
                 ))}
@@ -33,11 +48,9 @@ export function Footer() {
           ))}
         </div>
 
-        <div className="border-t border-line-dark pt-7">
-          <p className="max-w-[760px] text-small leading-[1.5] text-text-on-dark">
-            {footer.disclaimer}
-          </p>
-        </div>
+        <p className="max-w-[760px] text-small leading-[1.5] text-muted-dark">
+          {footer.disclaimer}
+        </p>
       </Container>
     </footer>
   );

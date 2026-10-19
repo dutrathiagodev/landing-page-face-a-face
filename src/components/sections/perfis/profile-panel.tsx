@@ -6,7 +6,7 @@ const styles = {
     panel: "bg-lula text-lula-tint",
     pad: "md:pl-[104px] md:pr-12",
     plate:
-      "bg-lula left-0 font-lula text-[clamp(56px,8vw,96px)] leading-[0.92] tracking-[0.5px] text-white",
+      "bg-lula left-0 w-3/4 pl-6 md:pl-[104px] font-lula text-[clamp(56px,8vw,96px)] leading-[0.92] tracking-[0.5px] text-white",
     heading: "font-lula text-[38px] leading-none tracking-[0.5px] text-white",
     card: "bg-lula-dark",
     divider: "border-lula-line",
@@ -17,7 +17,7 @@ const styles = {
     panel: "bg-flavio text-flavio-tint",
     pad: "md:pl-12 md:pr-[104px]",
     plate:
-      "bg-flavio right-0 font-flavio text-[clamp(44px,6vw,72px)] font-black italic leading-none tracking-[-1px] text-white",
+      "bg-flavio right-0 w-3/4 pl-6 font-flavio text-[clamp(44px,6vw,72px)] font-black italic leading-none tracking-[-1px] text-white",
     heading:
       "font-flavio text-[30px] font-black italic leading-none tracking-[-1px] text-white",
     card: "bg-flavio-dark",
@@ -79,12 +79,14 @@ export function ProfilePanel({ profile }: { profile: ProfileData }) {
           className="object-cover object-[center_30%] grayscale contrast-[1.1]"
         />
         <h3
-          className={`absolute bottom-0 px-6 pb-3 pt-4 uppercase md:px-8 ${tone.plate}`}
+          className={`absolute bottom-0 pb-3 pr-6 pt-4 uppercase ${tone.plate}`}
         >
-          {profile.name}
-          {isFlavio && (
-            <span className="mt-2 block h-[6px] w-full bg-flavio-accent" />
-          )}
+          <span className="inline-block">
+            {profile.name}
+            {isFlavio && (
+              <span className="mt-2 block h-[6px] w-full bg-flavio-accent" />
+            )}
+          </span>
         </h3>
       </div>
 
