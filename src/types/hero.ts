@@ -7,7 +7,6 @@ export type NamePlateData = {
 };
 
 export type HeroContent = {
-  date: string;
   image: { src: string; alt: string };
   candidates: [NamePlateData, NamePlateData];
 };

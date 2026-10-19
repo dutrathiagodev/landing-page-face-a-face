@@ -1,12 +1,14 @@
 import Image from "next/image";
 import { hero } from "@/content/hero";
+import { getToday } from "@/lib/today";
 import { NamePlate } from "./name-plate";
 
-export function Hero() {
+export async function Hero() {
   const [lula, flavio] = hero.candidates;
+  const today = await getToday();
 
   return (
-    <section className="relative h-[600px] md:h-[clamp(420px,56vw,820px)] w-full overflow-hidden bg-pink">
+    <section id="hero" className="relative h-[600px] md:h-[clamp(420px,56vw,820px)] w-full overflow-hidden bg-pink">
       <Image
         src={hero.image.src}
         alt={hero.image.alt}
@@ -18,7 +20,7 @@ export function Hero() {
 
       <div className="absolute left-1/2 top-8 flex -translate-x-1/2 flex-col items-center gap-2 md:top-14">
         <p className="bg-pink px-2 py-1 font-mono text-overline font-medium uppercase leading-[1.4] tracking-[2px] text-ink">
-          {hero.date}
+          {today}
         </p>
         <span
           aria-hidden="true"

@@ -1,14 +1,34 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Container } from "@/components/ui/container";
 import { navbar } from "@/content/navbar";
 
 export function Header() {
   const [open, setOpen] = useState(false);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const hero = document.getElementById("hero");
+    if (!hero) return;
+
+    const observer = new IntersectionObserver(([entry]) => {
+      const passedHero = !entry.isIntersecting && entry.boundingClientRect.top < 0;
+      setVisible(passedHero);
+      if (!passedHero) setOpen(false);
+    });
+
+    observer.observe(hero);
+    return () => observer.disconnect();
+  }, []);
 
   return (
-    <header className="sticky top-0 z-50 bg-ink text-text-on-dark">
+    <header
+      inert={!visible}
+      className={`fixed inset-x-0 top-0 z-50 bg-ink text-text-on-dark transition-transform duration-300 ${
+        visible ? "translate-y-0" : "-translate-y-full"
+      }`}
+    >
       <Container className="flex h-[72px] items-center justify-between">
         <a href="#" className="flex items-baseline gap-2" aria-label="Face a Face">
           <span className="font-lula text-[22px] leading-none tracking-[0.5px] text-lula-accent">
