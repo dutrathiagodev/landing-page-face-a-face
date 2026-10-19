@@ -17,5 +17,4 @@ export const footer = {
   ],
   disclaimer:
     "Material informativo. Não prevê resultado eleitoral, não recomenda voto e não atribui culpa onde as decisões consultadas não a estabeleceram. Pesquisa consultada em 15/10/2026.",
-  credit: "Fotos: [CRÉDITO DAS IMAGENS]",
 };

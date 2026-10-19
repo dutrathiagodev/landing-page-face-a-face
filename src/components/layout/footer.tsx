@@ -15,12 +15,9 @@ export function Footer() {
           ))}
         </ul>
 
-        <div className="flex flex-col gap-4 border-t border-line-dark pt-7 md:flex-row md:items-start md:justify-between md:gap-12">
+        <div className="flex flex-col gap-4 border-t border-line-dark pt-7 ">
           <p className="max-w-[760px] text-small leading-[1.5] text-text-on-dark">
             {footer.disclaimer}
-          </p>
-          <p className="shrink-0 font-mono text-mono leading-[1.5] text-muted-dark">
-            {footer.credit}
           </p>
         </div>
       </Container>
