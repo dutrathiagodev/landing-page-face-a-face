@@ -1,38 +1,44 @@
 # Landing page - face a face
 
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Guia cívico do 2º turno de 2026: um comparativo equilibrado entre os dois candidatos, com perfis, indicadores lado a lado, status jurídico, perguntas justas e as fontes consultadas.
 
-## Getting Started
+## Stack
 
-First, run the development server:
+- Next.js 16 (App Router) e React 19
+- TypeScript
+- Tailwind CSS 4
+- ESLint
+
+## Como rodar
+
+Pré-requisito: Node.js 20 ou superior.
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev     # desenvolvimento em http://localhost:3000
+npm run lint    # lint
+npm run build   # build de produção
+npm run start   # serve o build
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Estrutura
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```text
+src/
+  app/                  rotas, layout, metadata e estilos globais
+  components/
+    layout/             header e footer
+    sections/<secao>/   uma pasta por seção da página
+    ui/                 componentes visuais reutilizáveis
+  content/              textos e dados de cada seção
+  lib/                  utilitários (ex.: data do dia por API)
+  types/                tipos compartilhados
+public/images/          fotos usadas na página
+docs/architecture/      regras de arquitetura do projeto
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+A página é montada em `src/app/page.tsx`, que só compõe as seções. Os textos ficam em `src/content` e os componentes só cuidam da apresentação. As regras completas estão em `docs/architecture`.
 
-## Learn More
+## Data do Hero
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+A data exibida no Hero vem da API do `timeapi.io` (fuso de São Paulo) e é atualizada a cada hora. Se a API falhar, o site usa o relógio do sistema.
