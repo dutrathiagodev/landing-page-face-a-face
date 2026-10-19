@@ -5,6 +5,7 @@ const styles = {
   lula: {
     panel: "bg-lula text-lula-tint",
     pad: "md:pl-[104px] md:pr-12",
+    tint: "bg-lula/30",
     plate:
       "bg-lula left-0 font-lula text-[clamp(56px,8vw,96px)] leading-[0.92] tracking-[0.5px] text-white",
     heading: "font-lula text-[28px] leading-none tracking-[0.5px] text-white",
@@ -16,6 +17,7 @@ const styles = {
   flavio: {
     panel: "bg-flavio text-flavio-tint",
     pad: "md:pl-12 md:pr-[104px]",
+    tint: "bg-flavio/45",
     plate:
       "bg-flavio right-0 font-flavio text-[clamp(44px,6vw,72px)] font-black italic leading-none tracking-[-1px] text-white",
     heading:
@@ -67,6 +69,10 @@ export function ProfilePanel({ profile }: { profile: ProfileData }) {
           fill
           sizes="(min-width: 768px) 50vw, 100vw"
           className="object-cover object-top"
+        />
+        <div
+          aria-hidden="true"
+          className={`absolute inset-0 mix-blend-multiply ${tone.tint}`}
         />
         <h3
           className={`absolute bottom-0 px-6 pb-3 pt-4 uppercase md:px-8 ${tone.plate}`}
