@@ -1,4 +1,6 @@
+import { Footer } from "@/components/layout/footer";
 import { Header } from "@/components/layout/header";
+import { GoldenRule } from "@/components/sections/golden-rule/golden-rule";
 import { Hero } from "@/components/sections/hero/hero";
 import { Manifesto } from "@/components/sections/manifesto/manifesto";
 import { LadoALado } from "@/components/sections/lado-a-lado/lado-a-lado";
@@ -17,9 +19,9 @@ export default function Home() {
         <LadoALado />
         <StatusJuridico />
         <Perguntas />
-        {/* GoldenRule */}
+        <GoldenRule />
       </main>
-      {/* Footer: components/layout/footer.tsx */}
+      <Footer />
     </>
   );
 }
