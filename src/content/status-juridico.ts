@@ -8,7 +8,7 @@ export const statusJuridico: StatusJuridicoContent = {
     {
       title: "Lava Jato",
       tone: "lula",
-      text: "O STF anulou as condenações por incompetência da 13ª Vara de Curitiba e, em decisão separada, confirmou a suspeição de Sergio Moro no caso do triplex. Não são condenações válidas, nem um julgamento de mérito de todas as alegações.",
+      text: "O STF anulou as condenações por incompetência da 13ª Vara de Curitiba e, em decisão separada, confirmou a suspeição de Sergio Moro no caso do tríplex. Não são condenações válidas, nem um julgamento de mérito de todas as alegações.",
       source: "STF, abr. e jun. 2021 [10][11]",
     },
     {

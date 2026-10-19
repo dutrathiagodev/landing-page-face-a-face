@@ -6,10 +6,10 @@ export const manifesto: ManifestoContent = {
   lead: "Pontos fortes, riscos e controvérsias documentadas de cada candidato, lado a lado. Fatos separados de propostas; investigação separada de condenação; indicador separado de causalidade.",
   note: "Sem placar, sem vencedor, sem recomendação de voto.",
   ctas: [
-    { label: "Ver o comparativo", href: "#lado-a-lado", variant: "primary" },
+    { label: "Ver o comparativo", href: "#perfis", variant: "primary" },
     {
       label: "Planos no TSE",
-      href: "https://divulgacandcontas.tse.jus.br/",
+      href: "https://www.tse.jus.br/eleicoes/eleicoes-2026-content/propostas-de-governo-dos-candidatos-ao-cargo-de-presidente-da-republica-eleicoes-2026",
       variant: "outline",
     },
   ],

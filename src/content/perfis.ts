@@ -32,7 +32,7 @@ export const perfis: [ProfileData, ProfileData] = [
       {
         title: "Dívida e sustentabilidade fiscal",
         text: "Dívida bruta em 82,5% do PIB em julho de 2026, alta de 3,9 p.p. no ano. Vários fatores pesam, inclusive juros.",
-        ref: "[4]",
+        ref: "[8]",
       },
       {
         title: "Ajuste sem solução estrutural",
@@ -48,9 +48,9 @@ export const perfis: [ProfileData, ProfileData] = [
   },
   {
     candidate: "flavio",
-    name: "Flávio",
+    name: "Bolsonaro",
     bio: "Senador desde 2019, após quatro mandatos como deputado estadual no RJ. Agenda declarada em segurança pública, reforma administrativa, desburocratização, serviços digitais e redução de tributos.",
-    image: { src: "/images/perfil-flavio.jpg", alt: "Retrato de Flávio" },
+    image: { src: "/images/perfil-flavio.jpg", alt: "Retrato de Flávio Bolsonaro" },
     strengths: [
       {
         title: "Experiência legislativa",
@@ -81,7 +81,7 @@ export const perfis: [ProfileData, ProfileData] = [
       },
       {
         title: "Meta fiscal sem memória de cálculo",
-        text: "Promete +1,5% do PIB no primário em 18 meses, sem detalhar como, segundo a Reuters — crítica aos dois planos.",
+        text: "Promete +1,5% do PIB no primário em 18 meses, sem detalhar como, segundo a Reuters — que critica os dois planos.",
         ref: "[9]",
       },
       {
